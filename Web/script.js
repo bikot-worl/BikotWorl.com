@@ -43,6 +43,32 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
+document.addEventListener('contextmenu', e => {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+});
+
+document.addEventListener('dragstart', e => {
+    if (e.target.tagName === 'IMG') e.preventDefault();
+});
+
+document.addEventListener('keydown', e => {
+    if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'u')) {
+        e.preventDefault();
+    }
+});
+
+// Protección extra en móviles para evitar que dejen el dedo presionado sobre tus .webp
+const estiloFuerte = document.createElement('style');
+estiloFuerte.innerHTML = `
+    img {
+        -webkit-touch-callout: none !important;
+        -webkit-user-select: none !important;
+        user-select: none !important;
+        pointer-events: none !important;
+    }
+`;
+document.head.appendChild(estiloFuerte);
+
 
 window.toggleGameOptions = toggleGameOptions;
 window.openModal = openModal;
