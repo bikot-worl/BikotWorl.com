@@ -47,10 +47,10 @@ body {
 
 @font-face {
   font-family: 'Bikot';
-  src: url('fonts/Bikot.woff2') format('woff2'),
-       url('fonts/Bikot.ttf') format('truetype'),
-       url('fonts/Bikot.woff') format('woff'),
-       url('fonts/Bikot.otf') format('opentype');
+  src: url('../fonts/Bikot.woff2') format('woff2'),
+       url('../fonts/Bikot.ttf') format('truetype'),
+       url('../fonts/Bikot.woff') format('woff'),
+       url('../fonts/Bikot.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: block;
