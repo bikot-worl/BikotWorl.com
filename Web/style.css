@@ -704,3 +704,23 @@ main {
 .game-options {
   grid-column: 1 / span 2;
 }
+@media (min-width: 768px) {
+  .game-item-container {
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .game-outer-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .game-item-container:hover .game-options {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+  }
+}
