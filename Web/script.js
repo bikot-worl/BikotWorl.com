@@ -5,6 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+                console.log('Service Worker registrado con éxito:', registration.scope);
+            })
+            .catch((error) => {
+                console.error('Error al registrar el Service Worker:', error);
+            });
+    });
+}
+
 function toggleGameOptions(gameId) {
     const options = document.getElementById(gameId + '-options');
     options.classList.toggle('show');
@@ -32,17 +44,17 @@ function closeModalOnOutsideClick(event) {
     }
 }
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then((registration) => {
-        console.log('Service Worker registrado con éxito:', registration.scope);
-      })
-      .catch((error) => {
-        console.error('Error al registrar el Service Worker:', error);
-      });
-  });
-}
+const estiloFuerte = document.createElement('style');
+estiloFuerte.innerHTML = `
+    img {
+        -webkit-touch-callout: none !important;
+        -webkit-user-select: none !important;
+        user-select: none !important;
+        pointer-events: none !important;
+    }
+`;
+document.head.appendChild(estiloFuerte);
+
 document.addEventListener('contextmenu', e => {
     if (e.target.tagName === 'IMG') e.preventDefault();
 });
@@ -56,19 +68,6 @@ document.addEventListener('keydown', e => {
         e.preventDefault();
     }
 });
-
-// Protección extra en móviles para evitar que dejen el dedo presionado sobre tus .webp
-const estiloFuerte = document.createElement('style');
-estiloFuerte.innerHTML = `
-    img {
-        -webkit-touch-callout: none !important;
-        -webkit-user-select: none !important;
-        user-select: none !important;
-        pointer-events: none !important;
-    }
-`;
-document.head.appendChild(estiloFuerte);
-
 
 window.toggleGameOptions = toggleGameOptions;
 window.openModal = openModal;
