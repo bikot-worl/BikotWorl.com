@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bikot</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.1.0/uicons-bold-straight/css/uicons-bold-straight.css">
+  <link rel="stylesheet" href="style.css"> 
+  <link rel="stylesheet" href="animation.css"> 
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+  <header class="header-bar">
+    <div class="header-content">
+      <div class="app-title-container">
+        <i class="icon-Bikot app-icon-header-custom icon-color-negro"></i>
+        <span class="app-title-superposition">Bikotㅤㅤ</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="game-list">
+      <div class="game-item-container" id="snake-container">
+        <img src="../Imágenes/snake_icono.webp" alt="Snake" class="game-outer-icon">
+        
+        <div class="game-item">
+          <button class="game-button" onclick="toggleGameOptions('snake')">
+            Snake <span class="game-status"> (beta) </span>
+          </button>
+          <button class="info-button" onclick="openModal('snakeModal')">
+            <i class="fas fa-info-circle"></i>
+          </button>
+        </div>
+        <div class="game-options" id="snake-options">
+          <button class="option-button" onclick="window.open('https://Gatosauriocrackworl.com/snake/', '_blank')">
+            <i class="fas fa-play"></i> Jugar
+          </button>
+          <button class="option-button" onclick="window.open('https://Gatosauriocrackworl.com/snake/Records', '_blank')">
+            <i class="fas fa-trophy"></i> Tabla de Clasificación
+          </button>
+          <button class="option-button" onclick="window.location.href='Descarga.html'"> 
+            <i class="fas fa-download"></i> Descargar
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="game-list">
+      <div class="game-item-container" id="tetris-container">
+        <img src="../Imágenes/tetris_icono.webp" alt="Tetris" class="game-outer-icon">
+        
+        <div class="game-item">
+          <button class="game-button" onclick="toggleGameOptions('tetris')">
+            Tetris <span class="game-status"> (beta) </span>
+          </button>
+          <button class="info-button" onclick="openModal('tetrisModal')">
+            <i class="fas fa-info-circle"></i>
+          </button>
+        </div>
+        <div class="game-options" id="tetris-options">
+          <button class="option-button" onclick="window.open('https://gatosauriocrackworl.com/Tetris/', '_blank')">
+            <i class="fas fa-play"></i> Jugar
+          </button>
+          <button class="option-button" onclick="window.location.href='Descarga.html'"> 
+            <i class="fas fa-download"></i> Descargar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-list">
+      <div class="game-item-container" id="aleatory-container">
+        <img src="../Imágenes/Aleatory_icono.webp" alt="Aleatory" class="game-outer-icon">
+        
+        <div class="game-item">
+          <button class="game-button" onclick="toggleGameOptions('aleatory')">
+            Aleatory <span class="game-status"> (beta) </span>
+          </button>
+          <button class="info-button" onclick="openModal('aleatoryModal')">
+            <i class="fas fa-info-circle"></i>
+          </button>
+        </div>
+        <div class="game-options" id="aleatory-options">
+          <button class="option-button" onclick="window.open('https://gatosauriocrackworl.com/Aleatory/', '_blank')">
+            <i class="fas fa-play"></i> Jugar
+          </button>
+          <button class="option-button" onclick="window.open('https://gatosauriocrackworl.com/Aleatory/Records', '_blank')">
+            <i class="fas fa-trophy"></i> Tabla de Clasificación
+          </button>
+          <button class="option-button" onclick="window.location.href='Descarga.html'"> 
+            <i class="fas fa-download"></i> Descargar
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="snakeModal" class="modal-overlay" style="display: none;" onclick="closeModalOnOutsideClick(event)">
+    <div class="modal-content-game" onclick="event.stopPropagation()">
+        <span class="close-game-modal" onclick="closeModal('snakeModal')">&times;</span>
+        <h2 class="modal-title-game"><i class="fas fa-snake"></i> Snake!</h2>
+        <h3 class="modal-subtitle-game">El Clásico Juego de la Viborita</h3>
+        <ul>
+            <li><strong>Lento (Fácil)</strong></li>
+            <li><strong>Normal (Medio)</strong></li>
+            <li><strong>Rápido (Difícil)</strong></li>
+        </ul>
+        <h3 class="modal-subtitle-game"><i class="fas fa-trophy"></i> Clasificación Mundial</h3>
+        <p>La funcionalidad de registro de récords globales ha sido deshabilitada temporalmente.</p>
+        <div class="modal-alert-box alert-orange">
+            <strong>¡Importante!</strong> Necesitas internet para ver las clasificaciones.
+        </div>
+    </div>
+  </div>
+
+  <div id="tetrisModal" class="modal-overlay" style="display: none;" onclick="closeModalOnOutsideClick(event)">
+    <div class="modal-content-game" onclick="event.stopPropagation()">
+        <span class="close-game-modal" onclick="closeModal('tetrisModal')">&times;</span>
+        <h2 class="modal-title-game">Tetris</h2>
+        <h3 class="modal-subtitle-game">Acomoda los Bloques</h3>
+        <p>Disponible en versión web y APK. Cuenta con un diseño minimalista de dos colores en base a la estética de la app.</p>
+    </div>
+  </div>
+
+  <div id="aleatoryModal" class="modal-overlay" style="display: none;" onclick="closeModalOnOutsideClick(event)">
+    <div class="modal-content-game" onclick="event.stopPropagation()">
+        <span class="close-game-modal" onclick="closeModal('aleatoryModal')">&times;</span>
+        <h2 class="modal-title-game">Aleatory</h2>
+        <h3 class="modal-subtitle-game">Prueba tu Suerte</h3>
+        <p>Pon a prueba tu intuición o tu vista al 100% intentando adivinar y encontrar las sutiles variaciones en pantalla.</p>
+        <p>Dato uno es más claro.</p>
+    </div>
+  </div>
+
+  <footer class="main-footer">
+    <div class="footer-bottom">
+      <p>&copy; <span id="copyright-year"></span> Bikot. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
