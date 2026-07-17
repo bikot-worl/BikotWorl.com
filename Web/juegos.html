@@ -22,10 +22,18 @@
   </header>
 
   <main>
+    <h2 style="color: var(--color-naranja-principal);"><i class="fas fa-gamepad"></i> Juegos</h2>
+    
+    <div class="welcome-section" style="max-width: 600px; margin-bottom: 20px;">
+        <p>En este apartado se encontrarán links de los juegos y app beta en desarrollo. Cada error o bug contactarme por Gmail. ¡Solo disfruta y diviértete!</p>
+        <p>Al descargar el apk e instalarlo y/o jugarlo en línea estarás aceptando los: <a href="https://Bikotworl.com/©" target="_blank" class="eula-link"> Acuerdos de Licencia (EULA)</a></p> 
+    </div>
+
     <div class="game-list">
+      
+      <!-- Juego 1: Snake -->
       <div class="game-item-container" id="snake-container">
         <img src="../Imágenes/snake_icono.webp" alt="Snake" class="game-outer-icon">
-        
         <div class="game-item">
           <button class="game-button" onclick="toggleGameOptions('snake')">
             Snake <span class="game-status"> (beta) </span>
@@ -46,12 +54,10 @@
           </button>
         </div>
       </div>
-    </div>
-    
-    <div class="game-list">
+
+      <!-- Juego 2: Tetris -->
       <div class="game-item-container" id="tetris-container">
         <img src="../Imágenes/tetris_icono.webp" alt="Tetris" class="game-outer-icon">
-        
         <div class="game-item">
           <button class="game-button" onclick="toggleGameOptions('tetris')">
             Tetris <span class="game-status"> (beta) </span>
@@ -69,12 +75,10 @@
           </button>
         </div>
       </div>
-    </div>
 
-    <div class="game-list">
+      <!-- Juego 3: Aleatory -->
       <div class="game-item-container" id="aleatory-container">
         <img src="../Imágenes/Aleatory_icono.webp" alt="Aleatory" class="game-outer-icon">
-        
         <div class="game-item">
           <button class="game-button" onclick="toggleGameOptions('aleatory')">
             Aleatory <span class="game-status"> (beta) </span>
@@ -95,9 +99,11 @@
           </button>
         </div>
       </div>
+
     </div>
   </main>
 
+  <!-- MODALES -->
   <div id="snakeModal" class="modal-overlay" style="display: none;" onclick="closeModalOnOutsideClick(event)">
     <div class="modal-content-game" onclick="event.stopPropagation()">
         <span class="close-game-modal" onclick="closeModal('snakeModal')">&times;</span>
@@ -105,13 +111,13 @@
         <h3 class="modal-subtitle-game">El Clásico Juego de la Viborita</h3>
         <p>Con un diseño minimalista perfecto para pasar el rato comiendo puntos.</p>
         <p>Puedes jugar una de las tres dificultades:</p>
-        <p>ㅤㅤ</p>
+        <br>
         <ul>
             <li><strong>Lento (Fácil)</strong></li>
             <li><strong>Normal (Medio)</strong></li>
             <li><strong>Rápido (Difícil)</strong></li>
         </ul>
-        <p>ㅤㅤ</p>
+        <br>
         <h3 class="modal-subtitle-game"><i class="fas fa-trophy"></i> Clasificación Mundial</h3>
         <p>Tabla de clasificación mundial para ver quién tiene el puntaje más alto si te gusta competir</p>
         <div class="modal-alert-box alert-orange">
@@ -133,18 +139,18 @@
     </div>
   </div>
 
-  <div id="aleatoryModal" class="modal-overlay" style="display: none;" onclick="closeModalOnOutsideClick(event)">
+  <div id="aleatoryModal" class="modal-overlay" style="display: none;" onclick="event.stopPropagation()">
     <div class="modal-content-game" onclick="event.stopPropagation()">
         <span class="close-game-modal" onclick="closeModal('aleatoryModal')">&times;</span>
         <h2 class="modal-title-game">Aleatory</h2>
         <h3 class="modal-subtitle-game">Prueba tu Suerte</h3>
         <p>Pon a prueba tu intuición o tu vista al 100% intentando adivinar y encontrar las sutiles variaciones en pantalla.</p>
-        <p>Dato talves uno de los cuadros es más claro.</p>
+        <p>Dato tal vez uno de los cuadros es más claro.</p>
         <h3 class="modal-subtitle-game"><i class="fas fa-trophy"></i> Clasificación Mundial</h3>
         <p>Tabla de clasificación mundial para ver quién tiene el puntaje más alto si te gusta competir</p>
         <div class="modal-alert-box alert-orange">
-        <strong>¡Importante!</strong> Necesitas internet para ver las clasificaciones.
-      </div>
+          <strong>¡Importante!</strong> Necesitas internet para ver las clasificaciones.
+        </div>
     </div>
   </div>
 
