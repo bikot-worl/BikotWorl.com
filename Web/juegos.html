@@ -31,7 +31,6 @@
 
     <div class="game-list">
       
-      <!-- Juego 1: Snake -->
       <div class="game-item-container" id="snake-container">
         <img src="../Imágenes/snake_icono.webp" alt="Snake" class="game-outer-icon">
         <div class="game-item">
@@ -55,7 +54,6 @@
         </div>
       </div>
 
-      <!-- Juego 2: Tetris -->
       <div class="game-item-container" id="tetris-container">
         <img src="../Imágenes/tetris_icono.webp" alt="Tetris" class="game-outer-icon">
         <div class="game-item">
@@ -76,7 +74,6 @@
         </div>
       </div>
 
-      <!-- Juego 3: Aleatory -->
       <div class="game-item-container" id="aleatory-container">
         <img src="../Imágenes/Aleatory_icono.webp" alt="Aleatory" class="game-outer-icon">
         <div class="game-item">
@@ -103,7 +100,6 @@
     </div>
   </main>
 
-  <!-- MODALES -->
   <div id="snakeModal" class="modal-overlay" style="display: none;" onclick="closeModalOnOutsideClick(event)">
     <div class="modal-content-game" onclick="event.stopPropagation()">
         <span class="close-game-modal" onclick="closeModal('snakeModal')">&times;</span>
@@ -139,7 +135,7 @@
     </div>
   </div>
 
-  <div id="aleatoryModal" class="modal-overlay" style="display: none;" onclick="event.stopPropagation()">
+  <div id="aleatoryModal" class="modal-overlay" style="display: none;" onclick="closeModalOnOutsideClick(event)">
     <div class="modal-content-game" onclick="event.stopPropagation()">
         <span class="close-game-modal" onclick="closeModal('aleatoryModal')">&times;</span>
         <h2 class="modal-title-game">Aleatory</h2>

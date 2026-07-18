@@ -44,17 +44,6 @@ function closeModalOnOutsideClick(event) {
     }
 }
 
-const estiloFuerte = document.createElement('style');
-estiloFuerte.innerHTML = `
-    img {
-        -webkit-touch-callout: none !important;
-        -webkit-user-select: none !important;
-        user-select: none !important;
-        pointer-events: none !important;
-    }
-`;
-document.head.appendChild(estiloFuerte);
-
 document.addEventListener('contextmenu', e => {
     if (e.target.tagName === 'IMG') e.preventDefault();
 });
