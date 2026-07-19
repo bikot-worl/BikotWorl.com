@@ -955,3 +955,127 @@ main {
   0% { transform: rotateZ(0deg); }
   100% { transform: rotateZ(360deg); }
 }
+
+.social-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.social-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.icon-container {
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+
+.layer {
+  width: 55px;
+  height: 55px;
+  position: relative;
+  transform: rotate(-35deg) skew(20deg);
+}
+
+.layer span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #e6683c;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+.layer span:nth-child(1) { opacity: 0.2; }
+.layer span:nth-child(2) { opacity: 0.4; transform: translate(5px, -5px); }
+.layer span:nth-child(3) { opacity: 0.6; transform: translate(10px, -10px); }
+.layer span:nth-child(4) { opacity: 0.8; transform: translate(15px, -15px); }
+.layer span:nth-child(5) { 
+  opacity: 1; 
+  transform: translate(20px, -20px); 
+  box-shadow: -1px 1px 5px rgba(230, 104, 60, 0.5);
+}
+
+.instagramSVG {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+.tiktokSVG {
+  background: linear-gradient(45deg, #69C9D0 0%, #ee1d52 50%, #010101 100%);
+  border-color: #69C9D0 !important;
+}
+.youtubeSVG {
+  background: #FF0000;
+  border-color: #FF0000 !important;
+}
+
+.tiktok-container .layer span { border-color: #69C9D0; }
+.tiktok-container .layer span:nth-child(5) { box-shadow: -1px 1px 5px rgba(105, 201, 208, 0.5); }
+
+.youtube-container .layer span { border-color: #FF0000; }
+.youtube-container .layer span:nth-child(5) { box-shadow: -1px 1px 5px rgba(255, 0, 0, 0.5); }
+
+.svgContent {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-box {
+  background: #2a2b2f;
+  border-radius: 15px;
+  padding: 12px 20px;
+  border: 1px solid #3d3e42;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 180px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+}
+.instagram-title { color: #e6683c; }
+.tiktok-title { color: #69C9D0; }
+.youtube-title { color: #FF0000; }
+
+.username {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 6px;
+}
+
+.visit-link {
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .social-list-container {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+  }
+
+  .social-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .icon-container {
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+}
