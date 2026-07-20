@@ -246,7 +246,7 @@ main {
 }
 
 .container .glass:hover i {
-  color: #EA7900;
+  color: #00D4FF;
   transform: scale(1.1);
 }
 
@@ -833,7 +833,7 @@ main {
   display: block;
   width: 160px;
   height: 160%;
-  background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
+  background: linear-gradient(90deg, transparent, #00D4FF, #00D4FF, #00D4FF, #00D4FF, transparent);
   animation: rotation_481 5000ms infinite linear;
 }
 
